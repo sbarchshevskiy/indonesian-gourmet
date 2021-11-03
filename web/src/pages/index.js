@@ -104,31 +104,38 @@ const IndexPage = props => {
           />
         )}     
       </Container>
-      <form
-        style={{display: "flex", alignItems:"center", flexDirection:"column"}}
-        className="form" 
-        name="contact" 
-        method="post" 
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        >
-        <input 
-        name="name" 
-        placeholder="name"
-        type="text"
-        />
-        <input 
-        name="email" 
-        placeholder="email" 
-        type="text"
-        />
-        <input 
-        name="message" 
-        placeholder="message" 
-        type="text"
-        />
-        <button type="submit">Send</button>
-      </form>
+      <div style={{
+        display: "flex", 
+        justifyContent:"center",
+        
+        
+        }}>
+        <form
+          style={{display: "flex",flexDirection:"column", marginBottom:"35px", minWidth:"305px"}}
+          name="contact" 
+          method="post" 
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          >
+          <input
+          style={{padding:"5px", margin:"5px", boxShadow:"0 0 7px 4px rgba(0,0,0,0.06)", border:"0", borderRadius:"10px"}} 
+          name="name" 
+          placeholder="name"
+          type="text"
+          />
+          <input 
+          style={{padding:"5px", margin:"5px", border:"0", boxShadow:"0 0 7px 4px rgba(0,0,0,0.06)", borderRadius:"10px"}} 
+          name="email" 
+          placeholder="email" 
+          type="text"
+          />
+          <input
+          style={{padding:"5px", margin:"5px", height:"40px", border:"0", boxShadow:"0 0 7px 4px rgba(0,0,0,0.06)", borderRadius:"10px"}} 
+          name="message" 
+          placeholder="message"/>
+          <button type="submit" style={{marginTop: "10px",border:"none", borderRadius:"10px", backgroundColor:"#3F51B5", color:"#fff"}}>Send</button>
+        </form>
+      </div>
     </Layout>   
   );
 };
