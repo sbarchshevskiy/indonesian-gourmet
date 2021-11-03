@@ -1,5 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { useForm } from "react-hook-form"
+
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
@@ -62,6 +64,7 @@ export const query = graphql`
 const IndexPage = props => {
   const { data, errors } = props;
 
+
   if (errors) {
     return (
       <Layout>
@@ -70,7 +73,6 @@ const IndexPage = props => {
     );
   }
 
-
   const site = (data || {}).site;
   const projectNodes = (data || {}).projects
     ? mapEdgesToNodes(data.projects)
@@ -78,26 +80,32 @@ const IndexPage = props => {
         .filter(filterOutDocsPublishedInTheFuture)
     : [];
 
+ 
+
   if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
     );
   }
 
-  <form 
-            name="contact" 
-            method="post" 
-            data-netlify="true">
-            data-netlify-honeypot="bot-field"
-            <input 
-              name="name" 
-              placehodler="enter your name" 
-              type="text"/>
-            <button type="submit">Send</button>
-        </form>
-
   return (
+
+    
     <Layout>
+      {/* <form 
+        name="contact" 
+        method="post" 
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        >
+        <input 
+        name="name" 
+        placehodler="enter your name" 
+        type="text"
+        />
+        <button type="submit">Send</button>
+      </form> */}
+
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
@@ -107,15 +115,9 @@ const IndexPage = props => {
             nodes={projectNodes}
             browseMoreHref="/archive/"
           />
-
-          
-        )}
-
-        
-
+        )}     
       </Container>
-    </Layout>
-    
+    </Layout>   
   );
 };
 
