@@ -92,19 +92,6 @@ const IndexPage = props => {
 
     
     <Layout>
-      {/* <form 
-        name="contact" 
-        method="post" 
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        >
-        <input 
-        name="name" 
-        placehodler="enter your name" 
-        type="text"
-        />
-        <button type="submit">Send</button>
-      </form> */}
 
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <Container>
@@ -117,6 +104,31 @@ const IndexPage = props => {
           />
         )}     
       </Container>
+      <form
+        style={{display: "flex", alignItems:"center", flexDirection:"column"}}
+        className="form" 
+        name="contact" 
+        method="post" 
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        >
+        <input 
+        name="name" 
+        placeholder="name"
+        type="text"
+        />
+        <input 
+        name="email" 
+        placeholder="email" 
+        type="text"
+        />
+        <input 
+        name="message" 
+        placeholder="message" 
+        type="text"
+        />
+        <button type="submit">Send</button>
+      </form>
     </Layout>   
   );
 };
