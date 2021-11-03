@@ -132,7 +132,9 @@ const IndexPage = props => {
           <input
           style={{padding:"5px", margin:"5px", height:"40px", border:"0", boxShadow:"0 0 7px 4px rgba(0,0,0,0.06)", borderRadius:"10px"}} 
           name="message" 
-          placeholder="message"/>
+          placeholder="message"
+          type="text"
+          />
           <button type="submit" style={{marginTop: "10px",border:"none", borderRadius:"10px", backgroundColor:"#3F51B5", color:"#fff"}}>Send</button>
         </form>
       </div>
