@@ -70,6 +70,7 @@ const IndexPage = props => {
     );
   }
 
+
   const site = (data || {}).site;
   const projectNodes = (data || {}).projects
     ? mapEdgesToNodes(data.projects)
@@ -83,6 +84,18 @@ const IndexPage = props => {
     );
   }
 
+  <form 
+            name="contact" 
+            method="post" 
+            data-netlify="true">
+            data-netlify-honeypot="bot-field"
+            <input 
+              name="name" 
+              placehodler="enter your name" 
+              type="text"/>
+            <button type="submit">Send</button>
+        </form>
+
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
@@ -94,9 +107,15 @@ const IndexPage = props => {
             nodes={projectNodes}
             browseMoreHref="/archive/"
           />
+
+          
         )}
+
+        
+
       </Container>
     </Layout>
+    
   );
 };
 
