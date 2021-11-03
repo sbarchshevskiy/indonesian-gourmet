@@ -107,8 +107,6 @@ const IndexPage = props => {
       <div style={{
         display: "flex", 
         justifyContent:"center",
-        
-        
         }}>
         <form
           style={{display: "flex",flexDirection:"column", marginBottom:"35px", minWidth:"305px"}}
